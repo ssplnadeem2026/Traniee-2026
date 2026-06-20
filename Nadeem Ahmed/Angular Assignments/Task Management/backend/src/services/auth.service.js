@@ -123,7 +123,10 @@ const refreshAccessToken =
             jwt.verify(
                 refreshToken,
                 process.env
-                    .REFRESH_TOKEN_SECRET
+                    .REFRESH_TOKEN_SECRET,
+                {
+                    expiresIn: '7d'
+                }
             );
 
         const user =
